@@ -241,60 +241,10 @@ tldr
 duf
 inxi
 
-<<<<<<< HEAD
 #calamares
 calamares_config_ce
 calamares_config_default
 calamares_current
-=======
-
-# DESKTOP
-
-## Display manager
-accountsservice
-lightdm-slick-greeter
-eos-lightdm-slick-theme
-
-## Desktop environment
-lxqt
-xfce4-xkb-plugin
-
-## Editor
-xed
-
-## Archive
-file-roller
-
-## Image viewer
-ristretto
-
-## Video player
-parole
-
-## Browser
-firefox
-
-## System
-galculator
-meld
-neofetch
-
-## Fonts
-adobe-source-han-sans-cn-fonts
-adobe-source-han-sans-jp-fonts
-adobe-source-han-sans-kr-fonts
-cantarell-fonts
-noto-fonts
-ttf-bitstream-vera
-ttf-dejavu
-ttf-liberation
-ttf-opensans
-
-
-# CALAMARES
-
-## Calamares
->>>>>>> cd120703c727b0cb168d94e1237c2c56bbf4b383
 boost-libs
 cmake
 dmidecode
