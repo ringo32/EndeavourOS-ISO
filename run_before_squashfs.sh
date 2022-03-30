@@ -40,16 +40,16 @@ useradd -m -p "" -g users -G 'sys,rfkill,wheel,uucp,nopasswdlogin,adm,tty' -s /b
 # fix permissions and owner
 cd "/root/liveuser-desktop-settings"
 mkdir "/root/.config"
-cp -R ".config/"{"Kvantum","qt5ct"} "/root/.config/"
-dbus-launch dconf load / < "xed.dconf"
+#cp -R ".config/"{"Kvantum","qt5ct"} "/root/.config/"
+#dbus-launch dconf load / < "xed.dconf"
 rm -R "/home/liveuser/.config"
 cp -R ".config" "/home/liveuser/.config"
-rm "/home/liveuser/"{".bashrc",".bash_profile","xed.dconf","set_once_xfce4.sh"}
-cp ".bashrc" ".bash_profile" "user_pkglist.txt" "user_commands.bash" ".xinitrc" ".xprofile" ".Xauthority" "xed.dconf" "/home/liveuser/"
+rm "/home/liveuser/"{".bashrc",".bash_profile"}
+cp ".bashrc" ".bash_profile" "user_pkglist.txt" "user_commands.bash" ".xinitrc" ".xprofile" ".Xauthority" "/home/liveuser/"
 chown -R liveuser:liveuser "/home/liveuser"
 chmod +x "/home/liveuser/"{".xprofile",".xinitrc","user_commands.bash"}
-sudo -H -u liveuser bash -c 'dbus-launch dconf load / < "/home/liveuser/xed.dconf"'
-rm "/home/liveuser/xed.dconf"
+#sudo -H -u liveuser bash -c 'dbus-launch dconf load / < "/home/liveuser/xed.dconf"'
+#rm "/home/liveuser/xed.dconf"
 wget "https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/LICENSE"
 mv "LICENSE" "/home/liveuser/"
 cd ..
@@ -122,8 +122,8 @@ wget "https://raw.githubusercontent.com/endeavouros-team/endeavouros-theming/apo
 mv "endeavouros-wallpaper.png" "/etc/calamares/files/endeavouros-wallpaper.png"
 mv "/root/livewall.png" "/usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png"
 chmod 644 "/usr/share/endeavouros/backgrounds/"*".png"
-rm -rf "/usr/share/backgrounds/xfce/xfce-verticals.png"
-ln -s "/usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png" "/usr/share/backgrounds/xfce/xfce-verticals.png"
+#rm -rf "/usr/share/backgrounds/xfce/xfce-verticals.png"
+#ln -s "/usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png" "/usr/share/backgrounds/xfce/xfce-verticals.png"
 
 # fix packages that we want to keep but they would get uninstalled caused by dependency removals
 pacman -D --asexplicit sshfs rsync reiserfsprogs python-packaging

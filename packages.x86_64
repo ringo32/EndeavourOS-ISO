@@ -1,16 +1,16 @@
-# BASE
-
-## Base system
+#base-system
+amd-ucode
 base
 base-devel
-archlinux-keyring
-endeavouros-mirrorlist
-endeavouros-keyring
 cryptsetup
 device-mapper
 diffutils
 edk2-shell
+archlinux-keyring
+endeavouros-mirrorlist
+endeavouros-keyring
 inetutils
+intel-ucode
 less
 linux
 linux-firmware
@@ -31,45 +31,16 @@ sysfsutils
 systemd-sysvcompat
 texinfo
 which
-vi
+vim
 
-## Filesystem
-btrfs-progs
-dosfstools
-e2fsprogs
-exfatprogs
-f2fs-tools
-gvfs
-gvfs-afc
-gvfs-gphoto2
-gvfs-mtp
-gvfs-nfs
-gvfs-smb
-jfsutils
-lvm2
-mtools
-nfs-utils
-nilfs-utils
-ntfs-3g
-reiserfsprogs
-xfsprogs
+#ISO-specific
+mkinitcpio-archiso
+syslinux
+memtest86+
+arch-install-scripts
+pv
 
-## Boot
-efibootmgr
-efitools
-grub
-grub-tools
-os-prober
-refind
-
-
-# HARDWARE
-
-## CPU
-amd-ucode
-intel-ucode
-
-## X system
+#x-system
 mesa
 mesa-utils
 nvidia-dkms
@@ -85,41 +56,28 @@ xorg-xinput
 xorg-xkill
 xorg-xrandr
 
-## Network hardware
-b43-fwcutter
-broadcom-wl-dkms
-ipw2100-fw
-ipw2200-fw
-linux-atm
+#filesystem
+btrfs-progs
+dosfstools
+e2fsprogs
+exfatprogs
+f2fs-tools
+gvfs
+gvfs-afc
+gvfs-gphoto2
+gvfs-mtp
+gvfs-nfs
+#gvfs-smb
+jfsutils
+lvm2
+mtools
+nfs-utils
+nilfs-utils
+ntfs-3g
+reiserfsprogs
+xfsprogs
 
-## General hardware
-lsscsi
-sg3_utils
-smartmontools
-usbutils
-
-## Audio hardware
-alsa-firmware
-alsa-plugins
-alsa-utils
-ffmpegthumbnailer
-gst-libav
-gst-plugin-pipewire
-gst-plugins-bad
-gst-plugins-ugly
-libdvdcss
-paprefs
-pavucontrol
-pipewire-alsa
-pipewire-jack
-pipewire-media-session
-pipewire-pulse
-sof-firmware
-
-
-# SOFTWARE
-
-## General system
+#general-system
 crda
 dialog
 dmraid
@@ -150,10 +108,98 @@ xdg-user-dirs-gtk
 xdg-utils
 xz
 
-## Network
+#general-hardware
+lsscsi
+sg3_utils
+smartmontools
+usbutils
+
+#DM
+sddm
+eos-sddm-theme
+
+#lxqt
+
+lximage-qt
+lxqt-about
+lxqt-admin
+lxqt-archiver
+lxqt-config
+lxqt-globalkeys
+lxqt-notificationd
+lxqt-openssh-askpass
+lxqt-panel
+lxqt-policykit
+lxqt-powermanagement
+lxqt-qtplugin
+lxqt-runner
+lxqt-session
+lxqt-sudo
+lxqt-themes
+obconf-qt
+openbox
+pavucontrol-qt
+pcmanfm-qt
+qterminal
+screengrab
+featherpad
+feathernotes
+falkon
+speedcrunch
+qpdfview
+pavucontrol-qt
+xscreensaver
+
+#fonts
+adobe-source-han-sans-cn-fonts
+adobe-source-han-sans-jp-fonts
+adobe-source-han-sans-kr-fonts
+cantarell-fonts
+noto-fonts
+opendesktop-fonts
+ttf-bitstream-vera
+ttf-dejavu
+ttf-liberation
+ttf-opensans
+
+#audio
+alsa-firmware
+alsa-plugins
+alsa-utils
+ffmpegthumbnailer
+gst-libav
+gst-plugin-pipewire
+gst-plugins-bad
+gst-plugins-ugly
+libdvdcss
+paprefs
+#pavucontrol
+pipewire-alsa
+pipewire-jack
+pipewire-media-session
+pipewire-pulse
+sof-firmware
+
+#boot
+efibootmgr
+efitools
+grub
+grub-tools
+os-prober
+refind
+
+#net-hardware
+b43-fwcutter
+broadcom-wl-dkms
+ipw2100-fw
+ipw2200-fw
+linux-atm
+
+#network
 bind
 dhclient
 dnsmasq
+elinks
 ethtool
 gnu-netcat
 iwd
@@ -179,30 +225,13 @@ wireless_tools
 wpa_supplicant
 xl2tpd
 
-# Bluetooth
-bluez
-bluez-utils
-blueberry
-
-# Firewall
-firewalld
-
-# ISO
-
-## Live iso specific
-arch-install-scripts
-memtest86+
-mkinitcpio-archiso
-pv
-syslinux
-
-## Live iso tools
+#live-iso-tools
 gparted
 grsync
-clonezilla
+#clonezilla
 hdparm
 fsarchiver
-glances
+#glances
 python-defusedxml
 python-packaging
 bash-completion
@@ -212,104 +241,39 @@ tldr
 duf
 inxi
 
-
-# DESKTOP
-
-## Display manager
-accountsservice
-lightdm-slick-greeter
-eos-lightdm-slick-theme
-
-## Desktop environment
-endeavouros-skel-xfce4
-libwnck3
-network-manager-applet
-thunar-archive-plugin
-thunar-media-tags-plugin
-xfce4
-xfce4-battery-plugin
-xfce4-datetime-plugin
-xfce4-mount-plugin
-xfce4-netload-plugin
-xfce4-notifyd
-xfce4-pulseaudio-plugin
-xfce4-screensaver
-xfce4-screenshooter
-xfce4-taskmanager
-xfce4-wavelan-plugin
-xfce4-weather-plugin
-xfce4-whiskermenu-plugin
-xfce4-xkb-plugin
-
-## Editor
-xed
-
-## Archive
-file-roller
-
-## Image viewer
-ristretto
-
-## Video player
-parole
-
-## Browser
-firefox
-
-## System
-galculator
-meld
-neofetch
-
-## Fonts
-adobe-source-han-sans-cn-fonts
-adobe-source-han-sans-jp-fonts
-adobe-source-han-sans-kr-fonts
-cantarell-fonts
-noto-fonts
-ttf-bitstream-vera
-ttf-dejavu
-ttf-liberation
-ttf-opensans
-
-
-# CALAMARES
-
-## Calamares
+#calamares
+calamares_config_ce
+calamares_config_default
+calamares_current
 boost-libs
 cmake
 dmidecode
-doxygen
+#doxygen
 extra-cmake-modules
-kconfig
-kcoreaddons
-ki18n
-kparts
-kpmcore
-kservice
+#kconfig
+#kcoreaddons
+#ki18n
+#kparts
+#kpmcore
+#kservice
 kvantum
-kwidgetsaddons
+#kwidgetsaddons
 libpwquality
 lsb-release
 parted
 polkit-qt5
 python
 qt5-svg
-qt5-tools
-qt5-webengine
+#qt5-tools
+#qt5-webengine
 qt5-xmlpatterns
-qt5ct
 solid
 squashfs-tools
 tcpdump
 upower
-yaml-cpp
+#yaml-cpp
 
-
-# ENDEAVOUROS REPO
-
-## General
-
+#endeavouros-repo
 arc-gtk-theme-eos
 ckbcomp
 endeavouros-theming
@@ -323,6 +287,7 @@ eos-qogir-icons
 eos-rankmirrors
 eos-update-notifier
 grub2-theme-endeavouros
+meld
 mkinitcpio-openswap
 nvidia-installer-dkms
 rate-mirrors
@@ -331,24 +296,10 @@ welcome
 yad-eos
 yay
 
-## Calamares EndeavourOS
-calamares_config_ce
-calamares_config_default
-calamares_current
-
-
-# VM SUPPORT
-
-## Qemu
-qemu-guest-agent
-
-## Spice
-spice-vdagent
-
-## Virtual-box
-virtualbox-guest-utils
-
-## VMware
+#vm-support
 open-vm-tools
+qemu-guest-agent
+spice-vdagent
+virtualbox-guest-utils
 xf86-input-vmmouse
 xf86-video-vmware
