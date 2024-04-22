@@ -1,6 +1,6 @@
 # EndeavourOS-ISO
 
-[![Maintenance](https://img.shields.io/maintenance/yes/2023.svg)]()
+[![Maintenance](https://img.shields.io/maintenance/yes/2024.svg)]()
 
 **main** branch is development latest (unstable)
 
@@ -71,7 +71,7 @@ https://github.com/endeavouros-team/EndeavourOS-ISO/blob/main/CHANGELOG.md
 ### Install build dependencies
 
 ```
-sudo pacman -S archiso mkinitcpio-archiso git squashfs-tools --needed
+sudo pacman -S archiso git squashfs-tools --needed
 ```
 It is recommended to reboot after these changes.
 
@@ -84,12 +84,14 @@ https://github.com/endeavouros-team/EndeavourOS-ISO/tags
 
 If not, it will default to using the latest "unstable" development state.
 
-example using latest **stable** release (23.10.1 Galileo KDE Release)
+example using latest **stable** release (23.11.1.2 Galileo KDE Release) 
+
+**Warning:** do **not** use the zip tarball, in case this causes issues with symlinks.
 
 ```
-wget https://github.com/endeavouros-team/EndeavourOS-ISO/archive/refs/tags/23.10.1.tar.gz
-tar -xvf 23.10.1.tar.gz
-cd "EndeavourOS-ISO-23.10.1"
+wget https://github.com/endeavouros-team/EndeavourOS-ISO/archive/refs/tags/23.11.1.2.tar.gz
+tar -xvf 23.11.1.2.tar.gz
+cd "EndeavourOS-ISO-23.11.1.2"
 ./prepare.sh
 ```
 ### Or use latest **unstable** development branch using by cloning this repo using git:
@@ -108,7 +110,7 @@ tar -xvf 22.12.2.tar.gz
 cd "EndeavourOS-ISO-22.12.2"
 ./prepare.sh
 ```
-But caused by the change to KDE these iso will use XFCE4 LiveSession and you will need to build calamares manually:
+But caused by the change to KDE these iso will use XFCE4 LiveSession and you will need to build calamares manually to get old style theming that is setup for the XFCE4 LiveSession:
 
 using this PKGBUILD: 
 https://raw.githubusercontent.com/endeavouros-team/PKGBUILDS/18e3f580abb68486091492168956619bb0f32abe/calamares/PKGBUILD
@@ -143,3 +145,17 @@ airootfs/root/packages
 ~~~
 
 Packages will be installed and the directory will be cleaned up after that.
+
+
+## General  ISO naming:
+
+Example:
+
+~~~
+EndeavourOS_Galileo-Neo-2024.01.25.iso
+~~~
+
+**EndeavourOS_RELEASENAMEREBUILD-YYYY.MM.DD.iso**
+
+* YYYY.MM.DD: of the release 
+* REBUILD: (empty), -Neo, -Nova 

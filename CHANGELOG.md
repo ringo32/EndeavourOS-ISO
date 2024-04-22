@@ -1,6 +1,15 @@
 ## Changelog holding milestones and major changes to the code
 
+
 ---
+# Gemini initial Release (2024)
+* removal of ARM install traces from the ISO
+* switching livesession to fit for plasma 6 update
+
+# Galileo Neo (2024)
+* fixing issue with changed license package (path changes) in mkarchiso
+* adding legacy intel fix to disable compositor on LiveSession if legacy intel with xf86-video-intel ist in use to reduce graphical issues.
+
 # Development start for Galileo Release (2023)
 * replacing xfce4 Live Session with KDE
 
@@ -55,6 +64,6 @@ Remove legacy code from `run_before_squashfs.sh`
 
 New merged repository structure (october 2021) by joekamprad. 
 Now live-user-desktop-settings are included under /airootfs/root/liveuser-desktop-settings
-First step on clean up the natrurally grown ISO structure..
+First step on clean up the naturally grown ISO structure..
 
 Adding [mkarchiso-changes.md](https://github.com/endeavouros-team/EndeavourOS-ISO/blob/main/mkarchiso-changes.md) to keep track of changes on the mkarchiso script for updating it to the latest version from time to time.
