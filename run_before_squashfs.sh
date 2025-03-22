@@ -36,6 +36,10 @@ cp -af "/etc/skel/"{".bashrc",".bash_profile"} "/root/filebackups/"
 
 # Install liveuser skel (in case of conflicts use overwrite)
 pacman -U --noconfirm --overwrite "/etc/skel/.bash_profile","/etc/skel/.bashrc" -- "/root/endeavouros-skel-liveuser/"*".pkg.tar.zst"
+echo "--- start validate skel files ---"
+ls /etc/skel/.*
+ls /etc/skel/
+echo "--- end validate skel files ---"
 
 # Prepare livesession settings and user
 sed -i 's/#\(en_US\.UTF-8\)/\1/' "/etc/locale.gen"
@@ -63,7 +67,9 @@ cat "/usr/lib/endeavouros-release" >> "/etc/motd"
 echo "------------------" >> "/etc/motd"
 
 # Install locally builded packages on ISO (place packages under airootfs/root/packages)
+echo "----- content of /root/packages -----"
 ls "/root/packages/"
+echo "----- end of content of /root/packages -----"
 pacman -U --noconfirm --needed -- "/root/packages/"*".pkg.tar.zst"
 rm -rf "/root/packages/"
 
@@ -88,13 +94,9 @@ cp -af "/root/filebackups/"{".bashrc",".bash_profile"} "/etc/skel/"
 mv "/usr/lib/modprobe.d/nvidia-utils.conf" "/etc/calamares/files/nv-modprobe"
 mv "/usr/lib/modules-load.d/nvidia-utils.conf" "/etc/calamares/files/nv-modules-load"
 
-# Get extra drivers
-mkdir "/opt/extra-drivers"
-pacman -Syy
-pacman -Sw --noconfirm --cachedir "/opt/extra-drivers" r8168
-
 # get needed packages for offline installs
 mkdir -p "/usr/share/packages"
+pacman -Syy
 pacman -Sw --noconfirm --cachedir "/usr/share/packages" grub eos-dracut kernel-install-for-dracut os-prober xf86-video-intel
 
 # Clean pacman log and package cache
@@ -109,7 +111,7 @@ pacman -Qs | grep "/firefox " | cut -c7- >> iso_package_versions
 pacman -Qs | grep "/linux " | cut -c7- >> iso_package_versions
 pacman -Qs | grep "/mesa " | cut -c7- >> iso_package_versions
 pacman -Qs | grep "/xorg-server " | cut -c7- >> iso_package_versions
-pacman -Qs | grep "/nvidia-dkms " | cut -c7- >> iso_package_versions
+pacman -Qs | grep "/nvidia " | cut -c7- >> iso_package_versions
 mv "iso_package_versions" "/home/liveuser/"
 
 echo "############################"
