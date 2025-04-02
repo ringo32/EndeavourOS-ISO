@@ -171,9 +171,9 @@ bluez
 bluez-utils
 
 ## Firewall
-firewalld
-python-pyqt5
-python-capng
+#firewalld
+#python-pyqt6
+#python-capng
 
 # ISO
 
@@ -193,57 +193,45 @@ fsarchiver
 gpart
 gparted
 grsync
-partitionmanager
 hdparm
+timeshift
 
 # DESKTOP
 
 ## Desktop environment
-ark
-bluedevil
+libdbusmenu-lxqt
+liblxqt
+lximage-qt
+lxqt-about
+lxqt-admin
+lxqt-archiver
+lxqt-build-tools
+lxqt-build-tools-qt5
+lxqt-config
+lxqt-globalkeys
+lxqt-menu-data
+lxqt-notificationd
+lxqt-openssh-askpass
+lxqt-panel
+lxqt-policykit
+lxqt-powermanagement
+lxqt-qtplugin
+lxqt-runner
+lxqt-session
+lxqt-sudo
+lxqt-themes
+obconf-qt
+openbox
+pavucontrol-qt
+pcmanfm-qt
+qps
+qterminal
+screengrab
+xdg-desktop-portal-lxqt
+sddm
+eos-sddm-theme
 breeze-gtk
-dolphin
-dolphin-plugins
-eos-breeze-sddm
-ffmpegthumbs
-fwupd
-gwenview
-haruna
-kate
-kcalc
-kde-cli-tools
-kde-gtk-config
-kdeconnect
-kdegraphics-thumbnailers
-kdenetwork-filesharing
-kdeplasma-addons
-kgamma
-kimageformats
-kinfocenter
-kio-admin
-kio-extras
-kio-fuse
-konsole
-kscreen
-kwallet-pam
-kwayland-integration
-libappindicator-gtk3
-maliit-keyboard
-okular
-plasma-browser-integration
-plasma-desktop
-plasma-disks
-plasma-firewall
-plasma-nm
-plasma-pa
-plasma-systemmonitor
-plasma-workspace
-powerdevil
-print-manager
-sddm-kcm
-spectacle
-xdg-desktop-portal-kde
-xsettingsd
+breeze-icons
 
 ## Browser
 firefox
