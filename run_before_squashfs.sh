@@ -72,8 +72,13 @@ echo "---> backup bash configs from skel to replace after liveuser creation --->
 mkdir -p "/root/filebackups/"
 cp -af "/etc/skel/"{".bashrc",".bash_profile"} "/root/filebackups/"
 
-echo "---> Install liveuser skel (in case of conflicts use overwrite) --->"
-pacman -U --noconfirm --overwrite "/etc/skel/.bash_profile","/etc/skel/.bashrc" -- "/root/endeavouros-skel-liveuser/"*".pkg.tar.zst"
+#echo "---> Install liveuser skel (in case of conflicts use overwrite) --->"
+#pacman -U --noconfirm --overwrite "/etc/skel/.bash_profile","/etc/skel/.bashrc" -- "/root/endeavouros-skel-liveuser/"*".pkg.tar.zst"
+
+
+# create overlayfs / merge skell with liveskel
+mount -t overlay overlay -o lowerdir=/root/liveskel:/etc/skel /etc/liveskel
+
 echo "---> start validate skel files --->"
 ls /etc/skel/.*
 ls /etc/skel/
@@ -88,18 +93,19 @@ echo "---> Set root permission and shell --->"
 usermod -s /usr/bin/bash root
 
 echo "---> Create liveuser --->"
-useradd -m -p "" -g 'liveuser' -G 'sys,rfkill,wheel,uucp,nopasswdlogin,adm,tty' -s /bin/bash liveuser
+useradd -m -p "" -g 'liveuser' -G 'sys,rfkill,wheel,uucp,nopasswdlogin,adm,tty' -s /bin/bash liveuser -k /etc/liveskel
 cp "/root/liveuser.png" "/var/lib/AccountsService/icons/liveuser"
 rm "/root/liveuser.png"
 
 echo "---> Remove liveuser skel to clean for target skel --"
 pacman -Sy
-pacman -Rns --noconfirm -- "endeavouros-skel-liveuser"
-rm -rf "/root/endeavouros-skel-liveuser"
+#pacman -Rns --noconfirm -- "endeavouros-skel-liveuser"
+rm -rf "/root/liveskel"
+rm -rf "/etc/liveskel"
 
 echo "---> setup theming for root user --->"
-cp -a "/root/root-theme" "/root/.config"
-rm -R "/root/root-theme"
+cp -a "/etc/skel/.config" "/root/.config"
+#rm -R "/root/root-theme"
 
 echo "---> Add builddate to motd --->"
 cat "/usr/lib/endeavouros-release" >> "/etc/motd"
